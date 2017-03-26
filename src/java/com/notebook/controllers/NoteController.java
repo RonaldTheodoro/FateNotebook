@@ -6,8 +6,8 @@ import com.notebook.models.NoteDao;
 public class NoteController {
     private final NoteDao noteDao;
 
-    public NoteController(NoteDao noteDao) {
-        this.noteDao = noteDao;
+    public NoteController() {
+        this.noteDao = new NoteDao();
     }
     
     public void insertNote(Note note) {
