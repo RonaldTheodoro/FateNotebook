@@ -51,6 +51,22 @@ public class NoteDao {
         }
     }
     
+    public List<Note> listAllUserNotes(String author) {
+        sql = "SELECT * FROM note WHERE author LIKE ?";
+        
+        try {
+            prepareStatement(sql);
+            statement.setString(1, "%" + author + "%");
+            executeQuery();
+            
+            return getPopulatedList();
+        } catch (SQLException error) {
+            throw new RuntimeException(error);
+        } finally {
+            dispose();
+        }
+    }
+    
     private void prepareStatement(String sql) throws SQLException {
         statement = connection.prepareStatement(sql);
     }
