@@ -4,10 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import com.notebook.beans.Note;
 import com.notebook.models.connection.ConnectionDatabase;
 import com.notebook.util.DateUtil;
+import java.util.ArrayList;
 
 public class NoteDao {
     private final Connection connection;
@@ -34,8 +36,40 @@ public class NoteDao {
         }
     }
     
+    public List<Note> listAllNotes() {
+        sql = "SELECT * FROM note";
+        List<Note> notes = new ArrayList<>();
+        
+        try {
+            prepareStatement(sql);
+            executeQuery();
+            
+            while (resultSet.next()) {
+                notes.add(getPopulateNote());
+            }
+            
+            return notes;
+        } catch (SQLException error) {
+            throw new RuntimeException(error);
+        } finally {
+            dispose();
+        }
+    }
+    
     private void prepareStatement(String sql) throws SQLException {
         statement = connection.prepareStatement(sql);
+    }
+    
+    private Note getPopulateNote() throws SQLException {
+        Note note = new Note();
+        
+        note.setTitle(resultSet.getString("title"));
+        note.setAuthor(resultSet.getString("author"));
+        note.setText(resultSet.getString("text"));
+        note.setCreated(
+            DateUtil.toCalendar(resultSet.getDate("created")));
+        
+        return note;
     }
     
     private void populateInsertStatement(Note note) throws SQLException {
@@ -47,6 +81,10 @@ public class NoteDao {
     
     private void executeStatement() throws SQLException {
         statement.execute();
+    }
+    
+    private void executeQuery() throws SQLException {
+        resultSet = statement.executeQuery();
     }
     
     private void dispose() {
