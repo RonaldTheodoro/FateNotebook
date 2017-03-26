@@ -6,12 +6,12 @@
 <%@page import="com.notebook.controllers.NoteController" %>
 
 <%
-    Note note = new Note(
-        request.getParameter("title"),
-        request.getParameter("author"),
-        request.getParameter("textnote"), 
-        Calendar.getInstance()
-    );
+    Note note = new Note();
+    note.setTitle(request.getParameter("title"));
+    note.setAuthor(request.getParameter("author"));
+    note.setText(request.getParameter("textnote"));
+    note.setCreated(Calendar.getInstance());
+    
     NoteController noteController = new NoteController();
     noteController.insertNote(note);
     
