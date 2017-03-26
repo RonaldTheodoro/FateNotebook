@@ -19,4 +19,8 @@ public class NoteController {
     public List<Note> listAllNotes() {
         return noteDao.listAllNotes();
     }
+    
+    public List<Note> listAllUserNotes(String author) {
+        return noteDao.listAllUserNotes(author);
+    }
 }
