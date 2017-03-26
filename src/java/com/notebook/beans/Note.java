@@ -8,13 +8,6 @@ public class Note {
     private String text;
     private Calendar created;
 
-    public Note(String title, String author, String text, Calendar created) {
-        this.title = title;
-        this.author = author;
-        this.text = text;
-        this.created = created;
-    }
-
     public String getTitle() {
         return title;
     }
