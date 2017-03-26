@@ -38,17 +38,12 @@ public class NoteDao {
     
     public List<Note> listAllNotes() {
         sql = "SELECT * FROM note";
-        List<Note> notes = new ArrayList<>();
         
         try {
             prepareStatement(sql);
             executeQuery();
             
-            while (resultSet.next()) {
-                notes.add(getPopulateNote());
-            }
-            
-            return notes;
+            return getPopulatedList();
         } catch (SQLException error) {
             throw new RuntimeException(error);
         } finally {
@@ -58,6 +53,16 @@ public class NoteDao {
     
     private void prepareStatement(String sql) throws SQLException {
         statement = connection.prepareStatement(sql);
+    }
+    
+    private List<Note> getPopulatedList() throws SQLException {
+        List<Note> notes = new ArrayList<>();
+        
+        while (resultSet.next()) {
+            notes.add(getPopulateNote());
+        }
+        
+        return notes;
     }
     
     private Note getPopulateNote() throws SQLException {
