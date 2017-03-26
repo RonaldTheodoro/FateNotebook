@@ -21,6 +21,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
+    <header>
+        <hr>
+        <a href="../index.jsp">Home</a>
+        <a href="insertNote.jsp">Add Note</a>
+        <a href="listNotes.jsp">Show Notes</a>
+        <hr>
+    </header>
+    
+    <h1>List notes</h1>
+    
     <hr>
     <% for (Note note : notes) { %>
         <ul>

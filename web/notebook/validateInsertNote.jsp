@@ -26,6 +26,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
+    <header>
+        <a href="../index.jsp">Home</a>
+        <a href="insertNote.jsp">Add Note</a>
+        <a href="listNotes.jsp">Show Notes</a>
+    </header>
+    
+    <h1>Detail note</h1>
+    
     <p><%=note.getTitle() %></p>
     <p><%=note.getAuthor() %></p>
     <p><%=note.getCreated().getTime() %></p>
