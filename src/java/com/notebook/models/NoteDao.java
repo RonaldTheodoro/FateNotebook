@@ -67,6 +67,28 @@ public class NoteDao {
         }
     }
     
+    public void alterNote(Note note) {
+        sql = "UPDATE note SET title=?, author=?, text=?, created=? WHERE id=?";
+        
+        try {
+            prepareStatement(sql);
+            populateAlterNote(note);
+            executeQuery();
+        } catch (SQLException error) {
+            throw new RuntimeException(error);
+        } finally {
+            dispose();
+        }
+    }
+    
+    private void populateAlterNote(Note note) throws SQLException {
+        statement.setString(1, note.getTitle());
+        statement.setString(2, note.getAuthor());
+        statement.setString(3, note.getText());
+        statement.setDate(4, DateUtil.toSQLDate(note.getCreated()));
+        statement.setInt(5, note.getId());
+    }
+    
     private void prepareStatement(String sql) throws SQLException {
         statement = connection.prepareStatement(sql);
     }
@@ -84,6 +106,7 @@ public class NoteDao {
     private Note getPopulateNote() throws SQLException {
         Note note = new Note();
         
+        note.setId(resultSet.getInt("id"));
         note.setTitle(resultSet.getString("title"));
         note.setAuthor(resultSet.getString("author"));
         note.setText(resultSet.getString("text"));

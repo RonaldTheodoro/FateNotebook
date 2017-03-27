@@ -3,11 +3,20 @@ package com.notebook.beans;
 import java.util.Calendar;
 
 public class Note {
+    private int id;
     private String title;
     private String author;
     private String text;
     private Calendar created;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getTitle() {
         return title;
     }
