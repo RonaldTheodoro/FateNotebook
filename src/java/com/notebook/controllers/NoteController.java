@@ -16,6 +16,10 @@ public class NoteController {
         noteDao.insertNote(note);
     }
     
+    public void alterNote(Note note) {
+        noteDao.alterNote(note);
+    }
+    
     public List<Note> listAllNotes() {
         return noteDao.listAllNotes();
     }
