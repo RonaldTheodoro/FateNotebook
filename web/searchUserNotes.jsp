@@ -15,7 +15,7 @@
     <%@include file="header.jsp" %>
     
     <div class="container theme-showcase" role="main">
-        <h1>Add Note</h1>
+        <h1>Search Note</h1>
     
         <form class="form" name="insertNote" action="validateSearchUserNotes.jsp" method="POST">
             <div class="form-group">
