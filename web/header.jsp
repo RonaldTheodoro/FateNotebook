@@ -12,9 +12,9 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.jsp">Home</a></li>
-                <li><a href="notebook/insertNote.jsp">Add Note</a></li>
-                <li><a href="notebook/listNotes.jsp">Show Notes</a></li>
-                <li><a href="notebook/searchUserNotes.jsp">Search User Notes</a></li>
+                <li><a href="insertNote.jsp">Add Note</a></li>
+                <li><a href="listNotes.jsp">Show Notes</a></li>
+                <li><a href="searchUserNotes.jsp">Search User Notes</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
