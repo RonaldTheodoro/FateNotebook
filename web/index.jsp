@@ -11,6 +11,7 @@
         <a href="index.jsp">Home</a>
         <a href="notebook/insertNote.jsp">Add Note</a>
         <a href="notebook/listNotes.jsp">Show Notes</a>
+        <a href="notebook/searchUserNotes.jsp">Search User Notes</a>
         <hr>
     </header>
     

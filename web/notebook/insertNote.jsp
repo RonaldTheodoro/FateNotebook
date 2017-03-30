@@ -9,12 +9,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-    
     <header>
         <hr>
         <a href="../index.jsp">Home</a>
         <a href="insertNote.jsp">Add Note</a>
         <a href="listNotes.jsp">Show Notes</a>
+        <a href="searchUserNotes.jsp">Search User Notes</a>
         <hr>
     </header>
 
