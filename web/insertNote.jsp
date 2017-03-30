@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label for="textnote">Note</label>
-                <textarea class="form-control" id="textnote" rows="5"></textarea>
+                <textarea class="form-control" id="textnote" name="textnote" rows="5"></textarea>
             </div>
             <input type="submit" class="btn btn-primary" value="Save note">
         </form>
