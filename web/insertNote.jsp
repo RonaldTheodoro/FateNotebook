@@ -14,22 +14,25 @@
 </head>
 <body>
     <%@include file="header.jsp" %>
-
-    <h1>Add Note</h1>
+    <div class="container theme-showcase" role="main">
+        <h1>Add Note</h1>
     
-    <form name="insertNote" action="validateInsertNote.jsp" method="POST">
-        <p><label for="title">Title</label></p>
-        <p><input id="title" name="title" type="text"></p>
-        <p><label for="author">Author</label></p>
-        <p><input id="author" name="author" type="text"></p>
-        <p><label for="textnote">Note</label></p>
-        <p>
-            <textarea id="textnote" name="textnote" rows="10" cols="20">
-            
-            </textarea>
-        </p>
-        <p><input type="submit" value="Save note"></p>
-    </form>
+        <form class="form" name="insertNote" action="validateInsertNote.jsp" method="POST">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input id="title" name="title" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input id="author" name="author" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="textnote">Note</label>
+                <textarea class="form-control" id="textnote" rows="5"></textarea>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Save note">
+        </form>
+    </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
