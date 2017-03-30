@@ -19,15 +19,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap-theme.min.css" />
+    <script src="../static/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <header>
-        <hr>
-        <a href="../index.jsp">Home</a>
-        <a href="insertNote.jsp">Add Note</a>
-        <a href="listNotes.jsp">Show Notes</a>
-        <hr>
-    </header>
+    <%@include file="../header.jsp" %>
     
     <h1>List notes</h1>
     
@@ -45,5 +43,8 @@
     <% } else { %>
         <p>This user do not have notes yet.</p>
     <% } %>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
 </body>
 </html>
