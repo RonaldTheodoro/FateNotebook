@@ -26,20 +26,20 @@
 </head>
 <body>
     <%@include file="header.jsp" %>
-    
-    <h1>List notes</h1>
-    
-    <hr>
-    <% for (Note note : notes) { %>
-        <ul>
-            <li><%=note.getTitle() %></li>
-            <li><%=note.getAuthor() %></li>
-            <li><%=note.getCreated().getTime() %></li>
-            <li><%=note.getText() %></li>
-        </ul>
+    <div class="container theme-showcase" role="main">
+        <h1>List notes</h1>
+
         <hr>
-    <% } %>
-    
+        <% for (Note note : notes) { %>
+            <ul class="list-group">
+                <li class="list-group-item"><%=note.getTitle() %></li>
+                <li class="list-group-item"><%=note.getAuthor() %></li>
+                <li class="list-group-item"><%=note.getCreated().getTime() %></li>
+                <li class="list-group-item"><%=note.getText() %></li>
+            </ul>
+            <hr>
+        <% } %>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
 </body>
